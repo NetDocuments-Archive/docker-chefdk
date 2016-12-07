@@ -19,4 +19,6 @@ Upload to docker hub
 ```bash
 docker login
 docker push <yourname>/chefdk
+docker tag <yourname>/chefdk:latest <yourname>/chefdk:$(date +%Y%m%d)
+dccker push <yourname>/chefdk:$(date +%Y%m%d)
 ```
