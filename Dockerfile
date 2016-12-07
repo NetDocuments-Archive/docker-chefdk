@@ -1,8 +1,7 @@
-FROM  ubuntu
+FROM  ubuntu:xenial-20161121
 MAINTAINER Spencer Owen <sowen@netdocuments.com>
 
-RUN apt-get update
-RUN apt-get install curl git -y
+RUN apt-get update -qq; apt-get install curl git -y -q
 
 RUN curl -L https://www.opscode.com/chef/install.sh | bash -s -- -P chefdk
 
