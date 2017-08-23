@@ -1,9 +1,9 @@
-FROM  ubuntu:xenial-20161121
+FROM  ubuntu:xenial-20170802
 MAINTAINER Spencer Owen <sowen@netdocuments.com>
 
-RUN apt-get update -qq; apt-get install curl git -y -q
+RUN apt-get update -qq; apt-get install curl git locales -y -q
 
-RUN curl -L https://www.opscode.com/chef/install.sh | bash -s -- -P chefdk
+RUN curl -L https://omnitruck.chef.io/install.sh | bash -s -- -v 12.21.4
 
 # http://jaredmarkell.com/docker-and-locales/
 RUN locale-gen en_US.UTF-8
